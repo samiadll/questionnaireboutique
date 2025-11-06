@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Studio Suniya — Questionnaire e-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="color-scheme" content="light dark" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <img
+        src="assets/logo.svg"
+        alt="Studio Suniya"
+        class="logo"
+        onerror="this.style.display='none'"
+      />
+      <div class="title-wrap">
+        <h1>Studio Suniya</h1>
+        <p class="subtitle">Questionnaire de création de site e-commerce</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Formulaire EmailJS -->
+      <form
+        id="questionnaire"
+        action="https://api.emailjs.com/api/v1.0/email/send-form"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Identifiants EmailJS -->
+        <input type="hidden" name="service_id" value="boutique_studiosuniya" />
+        <input type="hidden" name="template_id" value="template_oqs89ub" />
+        <input type="hidden" name="user_id" value="LdELcjNljWA5hMHd_" />
+        <input type="hidden" name="public_key" value="LdELcjNljWA5hMHd_" />
+
+        <!-- 1. Informations générales -->
+        <section>
+          <h2>1. Informations générales</h2>
+          <label>Nom et prénom :</label>
+          <input type="text" name="nom" />
+
+          <label>Nom de votre marque / entreprise :</label>
+          <input type="text" name="marque" />
+
+          <label>Adresse e-mail :</label>
+          <input type="email" name="email" />
+
+          <label>Comptes Instagram / TikTok / site existant :</label>
+          <input type="text" name="reseaux" />
+
+          <p>Avez-vous déjà un nom de domaine ?</p>
+          <label
+            ><input type="radio" name="nom_domaine" value="Oui" /> Oui</label
+          >
+          <label
+            ><input type="radio" name="nom_domaine" value="Non" /> Non, je
+            souhaite que vous m’accompagniez</label
+          >
+
+          <label>Si oui → précisez :</label>
+          <input type="text" name="nom_domaine_precisez" />
+        </section>
+
+        <!-- 2. Identité visuelle -->
+        <section>
+          <h2>2. Identité visuelle</h2>
+          <label>Disposez-vous d’une charte graphique ou d’un logo ?</label>
+          <textarea name="charte_graphique"></textarea>
+
+          <label
+            >Y a-t-il des couleurs ou typographies que vous souhaitez conserver
+            ?</label
+          >
+          <textarea name="couleurs_typo"></textarea>
+
+          <p>
+            Avez-vous une identité visuelle existante à conserver ou
+            souhaitez-vous une refonte complète ?
+          </p>
+          <label
+            ><input type="radio" name="identite" value="Conserver" /> Conserver
+            l’identité actuelle</label
+          >
+          <label
+            ><input type="radio" name="identite" value="Refonte" /> Refonte
+            complète</label
+          >
+        </section>
+
+        <!-- 3. Produits & contenu -->
+        <section>
+          <h2>3. Produits & contenu</h2>
+          <label>Quels types de produits souhaitez-vous vendre ?</label>
+          <textarea name="produits"></textarea>
+
+          <label
+            >Combien de produits environ seront disponibles au lancement
+            ?</label
+          >
+          <input type="number" name="nb_produits" />
+
+          <label>Disposez-vous de photos produits professionnelles ?</label>
+          <select name="photos">
+            <option>Oui</option>
+            <option>Partiellement</option>
+            <option>Pas encore</option>
+          </select>
+
+          <label
+            >Avez-vous déjà les textes (descriptions, à propos, etc.) ?</label
+          >
+          <textarea name="textes"></textarea>
+
+          <p>Souhaitez-vous intégrer :</p>
+          <label><input type="checkbox" name="blog" value="Oui" /> Blog</label>
+          <label
+            ><input type="checkbox" name="lookbook" value="Oui" />
+            Lookbook</label
+          >
+          <label
+            ><input type="checkbox" name="galerie" value="Oui" /> Galerie
+            photo</label
+          >
+        </section>
+
+        <!-- 4. Objectif du site -->
+        <section>
+          <h2>4. Objectif du site</h2>
+          <p>Quel est le but principal du site ?</p>
+          <label
+            ><input type="checkbox" name="objectif_vendre" value="Oui" /> Vendre
+            mes produits</label
+          >
+          <label
+            ><input type="checkbox" name="objectif_visibilite" value="Oui" />
+            Gagner en visibilité</label
+          >
+          <label
+            ><input type="checkbox" name="objectif_vitrine" value="Oui" /> Créer
+            une vitrine professionnelle</label
+          >
+          <label
+            ><input type="checkbox" name="objectif_histoire" value="Oui" />
+            Raconter l’histoire de ma marque</label
+          >
+
+          <label>Quel problème votre site doit-il résoudre ?</label>
+          <textarea name="probleme"></textarea>
+
+          <p>Quelle impression souhaitez-vous que les visiteurs ressentent ?</p>
+          <label
+            ><input type="checkbox" name="impression_luxe" value="Oui" /> Luxe /
+            haut de gamme</label
+          >
+          <label
+            ><input type="checkbox" name="impression_minimaliste" value="Oui" />
+            Minimaliste et épuré</label
+          >
+          <label
+            ><input type="checkbox" name="impression_coloré" value="Oui" />
+            Coloré et audacieux</label
+          >
+          <label
+            ><input type="checkbox" name="impression_naturel" value="Oui" />
+            Naturel et doux</label
+          >
+          <label
+            ><input type="checkbox" name="impression_artistique" value="Oui" />
+            Artistique et original</label
+          >
+        </section>
+
+        <!-- 5. Cible & utilisateurs -->
+        <section>
+          <h2>5. Cible & utilisateurs</h2>
+          <label>Qui est votre public cible ?</label>
+          <textarea name="public_cible"></textarea>
+
+          <label
+            >Comportements d’achat (impulsifs, réfléchis, mobile, etc.) :</label
+          >
+          <textarea name="comportement"></textarea>
+        </section>
+
+        <!-- 6. Fonctionnalités souhaitées -->
+        <section>
+          <h2>6. Fonctionnalités souhaitées</h2>
+          <label
+            ><input type="checkbox" name="paiement" value="Oui" /> Paiement en
+            ligne</label
+          >
+          <label
+            ><input type="checkbox" name="stocks" value="Oui" /> Gestion des
+            stocks</label
+          >
+          <label
+            ><input type="checkbox" name="reservation" value="Oui" /> Système de
+            réservation</label
+          >
+          <label
+            ><input type="checkbox" name="newsletter" value="Oui" /> Newsletter
+            / Email marketing</label
+          >
+          <label
+            ><input type="checkbox" name="chat" value="Oui" /> Chat en
+            direct</label
+          >
+          <label
+            ><input type="checkbox" name="compte" value="Oui" /> Espace client /
+            compte utilisateur</label
+          >
+          <label
+            ><input type="checkbox" name="multilingue" value="Oui" />
+            Multilingue</label
+          >
+
+          <label>Souhaitez-vous intégrer un outil externe ?</label>
+          <input
+            type="text"
+            name="outil"
+            placeholder="Stripe, Planity, Calendly, Mailchimp…"
+          />
+        </section>
+
+        <!-- 7. Inspiration & références -->
+        <section>
+          <h2>7. Inspiration & références</h2>
+          <label>Citez 3 sites qui vous inspirent :</label>
+          <textarea name="sites_inspirants"></textarea>
+
+          <label>Ce que vous aimez particulièrement :</label>
+          <textarea name="aimez"></textarea>
+
+          <label>Ce que vous ne voulez surtout pas retrouver :</label>
+          <textarea name="ne_pas_vouloir"></textarea>
+        </section>
+
+        <!-- 8. Délai & disponibilité -->
+        <section>
+          <h2>8. Délai & disponibilité</h2>
+          <label>Date de lancement souhaitée :</label>
+          <input type="text" name="date_lancement" />
+
+          <label>Temps forts ou événements à prendre en compte :</label>
+          <textarea name="evenements"></textarea>
+        </section>
+
+        <!-- 9. Autres précisions -->
+        <section>
+          <h2>9. Autres précisions</h2>
+          <label>Y a-t-il autre chose à ajouter ?</label>
+          <textarea name="autres_precisions"></textarea>
+        </section>
+
+        <div class="actions">
+          <button type="submit" class="btn">Envoyer le questionnaire</button>
+        </div>
+
+        
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Studio Suniya · Tous droits réservés</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
